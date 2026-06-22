@@ -1,5 +1,7 @@
 # Dependency Blast Radius Simulator
 
+**Live Demo:** [https://dependency-blast-radius-simulator-l.vercel.app/](https://dependency-blast-radius-simulator-l.vercel.app/)
+
 A modern full-stack web application designed to help engineering teams model distributed services, define dependencies, visualize the dependency graph, and simulate service failures to compute the blast radius.
 
 ## Tech Stack
