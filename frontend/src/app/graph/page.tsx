@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { ReactFlow, Background, Controls, MiniMap, useNodesState, useEdgesState, MarkerType, addEdge, Connection } from '@xyflow/react';
+import { ReactFlow, Background, Controls, MiniMap, useNodesState, useEdgesState, MarkerType, addEdge, Connection, Node, Edge } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { fetchDependencies, fetchServices, createDependency } from '@/lib/api';
 import CustomNode from '@/components/CustomNode';
@@ -11,8 +11,8 @@ const nodeTypes = {
 };
 
 export default function GraphPage() {
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const [loading, setLoading] = useState(true);
 
   const loadGraphData = async () => {

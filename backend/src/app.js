@@ -8,7 +8,9 @@ const app = express();
 
 // Middlewares
 app.use(helmet());
-app.use(cors());
+app.use(cors(
+  allowlist = ['http://localhost:3000', 'http://localhost:3001']
+));
 app.use(express.json());
 app.use(morgan('dev'));
 
